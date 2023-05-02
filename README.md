@@ -18,6 +18,8 @@ time and uses UDP protocol, this is just to open the communication socket).
 Every method in this library corresponds to command given in the SDK documentation.
 Here is a list of the possible commands: <br><br>
 
+### Control commands
+
 | Command        | Python method                                                             | Description                                                                         | Possible Responses |
 |----------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------------------|
 | command        | `connect()`                                                               | entry SDK mode                                                                      | ok <br> error      |
@@ -35,3 +37,26 @@ Here is a list of the possible commands: <br><br>
 | flip x         | `flip(x: str)`                                                            | Tello fly flip with x in (l, r, f, b)                                               | ok <br> error      |
 | go x y z speed | `set_speed(x: int)`                                                       | Tello fly to x y z (range 20-500) with speed 10-100                                 | ok <br> error      |
 | curve x y z    | `curve(x1: int, y1: int, z1: int, x2: int, y2: int, z2: int, speed: int)` | Tello fly a curve defined by the current and two given coordinates with speed 10-60 | ok <br> error      |
+
+### Set commands
+
+| Command    | Python method                            | Description                                                                                                                     | Possible Responses |
+|------------|------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| speed x    | `set_speed(x: int)`                      | Set speed to x (range 10-100)                                                                                                   | ok <br> error      |
+| rc a b c d | `set_rc(a: int, b: int, c: int, d: int)` | Set remote control command with a: left/right (-100~100) b: forward/backward (-100~100) c: up/down (-100~100) d: yaw (-100~100) | ok <br> error      |
+| wifi ssid  | `set_wifi(ssid: str, password: str)`     | Set Wi-Fi with SSID (9 chars max)                                                                                               | ok <br> error      |
+
+### Read commands
+
+| Command       | Python method    | Description               | Possible Responses                  |
+|---------------|------------------|---------------------------|-------------------------------------|
+| speed?        | `get_speed()`    | Get current speed         | x: current speed <br> error         |
+| battery?      | `get_battery()`  | Get current battery       | x: current battery <br> error       |
+| time?         | `get_time()`     | Get current fly time      | x: current time <br> error          |
+| height?       | `get_height()`   | Get current height        | x: current height <br> error        |
+| temp?         | `get_temp()`     | Get current temp          | x: current temp <br> error          |
+| attitude?     | `get_attitude()` | Get current attitude      | x: current attitude <br> error      |
+| baro?         | `get_baro()`     | Get current barometer     | x: current barometer <br> error     |
+| acceleration? | `get_accel()`    | Get current accelerometer | x: current accelerometer <br> error |
+| tof?          | `get_tof()`      | Get current distance      | x: current distance <br> error      |
+| wifi?         | `get_wifi()`     | Get current Wi-Fi SSID    | x: current Wi-Fi SSID <br> error    |

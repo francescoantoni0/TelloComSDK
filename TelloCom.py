@@ -175,7 +175,7 @@ class TelloCom:
         response, add = self.s.recvfrom(4096)
         return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
 
-    def get_altitude(self) -> str:
+    def get_attitude(self) -> str:
         command = 'altitude?'.encode('utf-8')
         self.s.sendto(command, self.__address_tuple)
         response, add = self.s.recvfrom(4096)
