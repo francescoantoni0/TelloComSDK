@@ -145,3 +145,62 @@ class TelloCom:
         response, add = self.s.recvfrom(4096)
         return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
 
+    def get_speed(self) -> str:
+        command = 'speed?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_battery(self) -> str:
+        command = 'battery?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_time(self) -> str:
+        command = 'time?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_height(self) -> str:
+        command = 'height?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_temp(self) -> str:
+        command = 'temp?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_altitude(self) -> str:
+        command = 'altitude?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_baro(self) -> str:
+        command = 'baro?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_acceleration(self) -> str:
+        command = 'acceleration?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_tof(self) -> str:
+        command = 'tof?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def get_wifi(self) -> str:
+        command = 'wifi?'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
