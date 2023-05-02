@@ -86,8 +86,8 @@ class TelloCom:
         return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
 
     def rotate_clockwise(self, x: int) -> str:
-        if x not in range(20, 501):
-            raise AttributeError('x not in range(20, 500)')
+        if x not in range(1, 3600):
+            raise AttributeError('x not in range(1, 3600)')
         command = f'cw {x}'.encode('utf-8')
         self.s.sendto(command, self.__address_tuple)
         response, add = self.s.recvfrom(4096)
