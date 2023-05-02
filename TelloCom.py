@@ -23,4 +23,91 @@ class TelloCom:
         command = 'takeoff'.encode('utf-8')
         self.s.sendto(command, self.__address_tuple)
         response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def land(self) -> str:
+        command = 'land'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def emergency(self) -> str:
+        command = 'emergency'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def up(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'up {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def down(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'down {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def left(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'left {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def right(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'right {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def forward(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'forward {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def back(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'back {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def rotate_clockwise(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'cw {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def rotate_counter_clockwise(self, x: int) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        command = f'ccw {x}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
+
+    def flip(self, x: int, side: str) -> str:
+        if x not in range(20, 501):
+            raise AttributeError('x not in range(20, 500)')
+        if side not in ['l', 'r', 'f', 'b']:
+            raise AttributeError('side can only be l (left), r (right), f (forward), b (backward)')
+        command = f'flip {x} {side}'.encode('utf-8')
+        self.s.sendto(command, self.__address_tuple)
+        response, add = self.s.recvfrom(4096)
+        return f'From {add.decode("utf-8")}: {response.decode("utf-8")}'
 
