@@ -18,16 +18,20 @@ time and uses UDP protocol, this is just to open the communication socket).
 Every method in this library corresponds to command given in the SDK documentation.
 Here is a list of the possible commands: <br><br>
 
-| Command   | Python method     | Description                                | Possible Responses |
-|-----------|-------------------|--------------------------------------------|--------------------|
-| command   | `connect()`       | entry SDK mode                             | ok <br> error      |
-| takeoff   | `takeoff()`       | Tello auto takeoff                         | ok <br> error      |
-| land      | `land()`          | Tello auto land                            | ok <br> error      |
-| emergency | `emergency()`     | Stop all motors immediately                | ok <br> error      |
-| up x      | `up(x: int)`      | Tello fly up (distance in cm range 20-500) | ok <br> error      |
-| down x    | `down(x: int)`    | Tello fly down (distance in cm 20-500)     | ok <br> error      |
-| left x    | `left(x: int)`    | Tello fly left (distance in cm 20-500)     | ok <br> error      |
-| right x   | `right(x: int)`   | Tello fly right (distance in cm 20-500)    | ok <br> error      |
-| forward x | `forward(x: int)` | Tello fly forward (distance in cm 20-500)  | ok <br> error      |
-| back x    | `back(x: int)`    | Tello fly back (distance in cm 20-500)     | ok <br> error      |
-| cw x      | `cw(x: int)`      | Tello rotate clockwise (angle in degrees)  | ok <br> error      |
+| Command        | Python method                                                             | Description                                                                         | Possible Responses |
+|----------------|---------------------------------------------------------------------------|-------------------------------------------------------------------------------------|--------------------|
+| command        | `connect()`                                                               | entry SDK mode                                                                      | ok <br> error      |
+| takeoff        | `takeoff()`                                                               | Tello auto takeoff                                                                  | ok <br> error      |
+| land           | `land()`                                                                  | Tello auto land                                                                     | ok <br> error      |
+| emergency      | `emergency()`                                                             | Stop all motors immediately                                                         | ok <br> error      |
+| up x           | `up(x: int)`                                                              | Tello fly up (distance in cm range 20-500)                                          | ok <br> error      |
+| down x         | `down(x: int)`                                                            | Tello fly down (distance in cm 20-500)                                              | ok <br> error      |
+| left x         | `left(x: int)`                                                            | Tello fly left (distance in cm 20-500)                                              | ok <br> error      |
+| right x        | `right(x: int)`                                                           | Tello fly right (distance in cm 20-500)                                             | ok <br> error      |
+| forward x      | `forward(x: int)`                                                         | Tello fly forward (distance in cm 20-500)                                           | ok <br> error      |
+| back x         | `back(x: int)`                                                            | Tello fly back (distance in cm 20-500)                                              | ok <br> error      |
+| cw x           | `rotate_clockwise(x: int)`                                                | Tello rotate clockwise (angle in degrees)                                           | ok <br> error      |
+| ccw x          | `rotate_counter_clockwise(x: int)`                                        | Tello rotate counter-clockwise                                                      | ok <br> error      |
+| flip x         | `flip(x: str)`                                                            | Tello fly flip with x in (l, r, f, b)                                               | ok <br> error      |
+| go x y z speed | `set_speed(x: int)`                                                       | Tello fly to x y z (range 20-500) with speed 10-100                                 | ok <br> error      |
+| curve x y z    | `curve(x1: int, y1: int, z1: int, x2: int, y2: int, z2: int, speed: int)` | Tello fly a curve defined by the current and two given coordinates with speed 10-60 | ok <br> error      |
