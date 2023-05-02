@@ -40,11 +40,11 @@ Here is a list of the possible commands: <br><br>
 
 ### Set commands
 
-| Command    | Python method                            | Description                                                                                                                       | Possible Responses |
-|------------|------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|--------------------|
-| speed x    | `set_speed(x: int)`                      | Set speed to x (range 10-100)                                                                                                     | ok <br> error      |
-| rc a b c d | `set_rc(a: int, b: int, c: int, d: int)` | Set remote control command with a: left/right (-100\~100) b: forward/backward (-100\~100) c: up/down (-100~100) d: yaw (-100~100) | ok <br> error      |
-| wifi ssid  | `set_wifi(ssid: str, password: str)`     | Set Wi-Fi with SSID (9 chars max)                                                                                                 | ok <br> error      |
+| Command    | Python method                            | Description                                                                                                                         | Possible Responses |
+|------------|------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| speed x    | `set_speed(x: int)`                      | Set speed to x (range 10-100)                                                                                                       | ok <br> error      |
+| rc a b c d | `set_rc(a: int, b: int, c: int, d: int)` | Set remote control command with a: left/right (-100\~100) b: forward/backward (-100\~100) c: up/down (-100\~100) d: yaw (-100\~100) | ok <br> error      |
+| wifi ssid  | `set_wifi(ssid: str, password: str)`     | Set Wi-Fi with SSID (9 chars max)                                                                                                   | ok <br> error      |
 
 ### Read commands
 
