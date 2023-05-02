@@ -17,6 +17,9 @@ time and uses UDP protocol, this is just to open the communication socket).
 
 Every method in this library corresponds to command given in the SDK documentation.
 Here is a list of the possible commands: <br><br>
-| Command | Description | Possible Responses |
-| ------- |----------- | ------------------ |
-| command | entry SDK mode | ok error |
+
+| Command | Python method | Description        | Possible Responses |
+|---------|---------------|--------------------|--------------------|
+| command | `connect()`   | entry SDK mode     | ok <br> error      |
+| takeoff | `takeoff()`   | Tello auto takeoff | ok <br> error      |
+| land    | `land()`      | Tello auto land    | ok <br> error      |
